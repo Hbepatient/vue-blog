@@ -2,7 +2,7 @@
 FROM node:16.18.0 AS builder
 
 # 安装 Git
-RUN apk add --no-cache git
+RUN yum install --no-cache git
 
 # 从 Git 拉取前端代码
 RUN git clone https://github.com/Hbepatient/vue-blog.git /blog-app && \
