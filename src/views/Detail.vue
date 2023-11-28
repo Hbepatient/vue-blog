@@ -11,6 +11,7 @@ import 'vditor/dist/index.css';
 import moment from 'moment'
 import { ref, onMounted, computed, watch, watchEffect } from 'vue';
 import { useArticleStore } from '@/stores/article'
+import Comments from '@/common/Comments.vue';
 
 const { article } = useArticleStore()
 const vditor = ref<Vditor | null>(null);
@@ -75,6 +76,8 @@ onMounted(() => {
         <!-- <div v-html="articleHtml">
         </div> -->
         <v-md-preview class="preview" :text="article"></v-md-preview>
+        <el-divider/>
+        <Comments />
         <!-- <div id="vditor" /> -->
     </div>
 </template>
